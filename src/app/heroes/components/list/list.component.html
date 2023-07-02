@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-10">
+    <h1>Hero List</h1>
+  </div>
+
+  <div
+  *ngIf="heroNameList.length !==0"
+  (click)="DeleteHero()"
+  class="col-2 text-end">
+  <button class="btn btn-outline-danger">Delete Last Hero</button>
+  </div>
+  <hr>
+</div>
+
+<h3 *ngIf="deletedHero else NotDeleted">
+  Last Hero Deleted: <small class="text-danger">{{ deletedHero }}</small>
+</h3>
+
+<ng-template #NotDeleted>
+  <h3>No Hero was deleted</h3>
+</ng-template>
+
+<div>
+  <ul class="list-group">
+    <li *ngFor="let name of heroNameList" class="list-group-item">
+      {{ name }}
+    </li>
+  </ul>
+</div>
+
+
+<p
+*ngIf="heroNameList.length === 0"
+class="text-danger">
+Heroes List is empty
+</p>

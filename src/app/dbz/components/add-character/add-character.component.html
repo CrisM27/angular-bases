@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body">
+    <h4>Añadir Personaje</h4>
+    <hr>
+    <form class="row" (ngSubmit)="addNewCharacter()">
+      <input [(ngModel)]="addCharacter.name" name="name" type="text" class="form-control mb-2" placeholder="Nombre">
+      <input [(ngModel)]="addCharacter.power" name="power" type="number" class="form-control mb-2" placeholder="Poder">
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+  </div>
+</div>
+
+<!-- <pre>{{ addCharacter | json }}</pre> -->
